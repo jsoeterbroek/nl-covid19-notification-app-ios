@@ -20,6 +20,10 @@ This increases the chance that we might be able to use your contribution (or it 
 
 Run `make dev` && `make project` to get started. Homebrew (https://brew.sh) is a requirement to install dependencies.
 
+## Continuous Integration & reproducible builds
+
+In order to facilitate CI and reproducible builds (https://github.com/minvws/nl-covid19-notification-app-coordination/issues/6) this codebase can be build using Github Actions.
+
 ## OpenSSL
 
 Tihs project relies on OpenSSL to validate the KeySet signatures. OpenSSL binaries (v1.1.1d) are included and can be built using `make build_openssl`. By default the compiled binaries are part of the repo to reduce CI build times. Feel free to compile the binaries yourself.
