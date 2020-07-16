@@ -5,21 +5,11 @@ jobs:
   build_macos:
     runs-on: macOS-10.15
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      - name: Find symlinked paths to ignore
-        id: find
-        run: >-
-          echo "::set-output name=ignore::$(find -L src -xtype l -type d | sed -e 's#$#/**#' | head -c -1 | tr '\n' ',')"
-      - name: Check ignored paths
-        run: echo ${{ steps.find.outputs.ignore }} | tr ',' '\n'
-      - name: Compress Images
-        uses: minvws/nl-covid19-notification-app-ios@master
-        with:
-          ignorePaths: ${{ steps.find.outputs.ignore }}
-      - uses: ./tools/scripts/ci/010_ciprep
-        name: ciprep
-      - uses: ./tools/scripts/ci/030_cibuild
-        name: cibuild
-      - uses: ./tools/scripts/ci/050_citest
-        name: citest
+      # - name: Checkout repository
+      #   uses: minvws/nl-covid19-notification-app-ios@master
+      - name: ciprep
+        uses: ./tools/scripts/ci/010_ciprep
+      - name: cibuild
+        uses: ./tools/scripts/ci/030_cibuild
+      - name: citest
+        uses: ./tools/scripts/ci/050_citest
