@@ -1,0 +1,13 @@
+---
+name: "build macOS-10.15"
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: macOS-10.15
+    steps:
+      - uses: ./tools/scripts/ci/010_ciprep
+        name: ciprep
+      - uses: ./tools/scripts/ci/030_cibuild
+        name: cibuild
+      - uses: ./tools/scripts/ci/050_citest
+        name: citest
