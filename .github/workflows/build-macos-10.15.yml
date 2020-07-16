@@ -8,8 +8,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: ciprep
-        uses: ./tools/scripts/ci/010_ciprep
+        run: ./tools/scripts/ci/010_ciprep
       - name: cibuild
-        uses: ./tools/scripts/ci/030_cibuild
+        run: ./tools/scripts/ci/030_cibuild
       - name: citest
-        uses: ./tools/scripts/ci/050_citest
+        run: ./tools/scripts/ci/050_citest
