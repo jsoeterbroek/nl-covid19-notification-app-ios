@@ -6,6 +6,7 @@ jobs:
     name: build_macos_1015
     runs-on: macOS-10.15
     steps:
+      - uses: minvws/nl-covid19-notification-app-ios@master
       - uses: ./tools/scripts/ci/010_ciprep
         name: ciprep
       - uses: ./tools/scripts/ci/030_cibuild
