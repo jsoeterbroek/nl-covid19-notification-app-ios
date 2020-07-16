@@ -5,8 +5,8 @@ jobs:
   build_macos:
     runs-on: macOS-10.15
     steps:
-      # - name: Checkout repository
-      #   uses: minvws/nl-covid19-notification-app-ios@master
+      - name: Checkout repository
+        uses: actions/checkout@v2
       - name: ciprep
         uses: ./tools/scripts/ci/010_ciprep
       - name: cibuild
