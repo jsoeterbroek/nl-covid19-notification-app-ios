@@ -2,8 +2,8 @@
 name: "build macOS-10.15"
 on: push
 jobs:
-  build-macos-10.15:
-    name: build-macos-10.15
+  build_macos:
+    name: build_macos_1015
     runs-on: macOS-10.15
     steps:
       - uses: ./tools/scripts/ci/010_ciprep
