@@ -8,9 +8,11 @@ jobs:
     steps:
       - uses: minvws/nl-covid19-notification-app-ios@master
         name: Check out repository master branch
-# - uses: ./tools/scripts/ci/010_ciprep
-#  name: ciprep
-# - uses: ./tools/scripts/ci/030_cibuild
-#  name: cibuild
-# - uses: ./tools/scripts/ci/050_citest
-#  name: citest
+        with:
+          fetch-depth: 5
+      - uses: ./tools/scripts/ci/010_ciprep
+        name: ciprep
+      - uses: ./tools/scripts/ci/030_cibuild
+        name: cibuild
+      - uses: ./tools/scripts/ci/050_citest
+        name: citest
